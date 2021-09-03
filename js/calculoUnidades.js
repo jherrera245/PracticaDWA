@@ -2,7 +2,7 @@
 
 function init() {
     //Ingresar datos a convertir
-    var operacion = prompt("Ingrese la cantidad de metros", "");
+    var operacion = leerNumeroPositivo("Ingrese la cantidad de metros");
     var operaciones = document.getElementById("operaciones");
     var resultado = document.getElementById("resultado");
 
@@ -58,4 +58,15 @@ function generandoMenuOpciones() {
     contenido += "</nav>\n";
 
     return contenido;
+}
+
+//solo positivos
+//esta funcion dara lectura a un valor desde un prompont
+function leerNumeroPositivo(mensaje) {
+    var read  = 0;
+    //repetir esta instrucción hasta ingresar un numero positivo
+    do{
+        read = parseFloat(prompt(mensaje, ""));
+    }while (read<0 || isNaN(read));
+    return read;
 }
