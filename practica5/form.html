@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form JQuery</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        function validar() {
+            var nickname = document.getElementById("Nickname").value;
+            var nombre = document.getElementById("Nombre").value;
+            var apellido = document.getElementById("Apellido").value;
+
+            if (nickname == "") {
+                $("#Nickname").after("<span id='validarNickname' style='color:red'> Este campo es obligatorio <span><br>")
+            }
+
+            if (nombre == "") {
+                $("#Nombre").after("<span id='validarNombre' style='color:red'> Este campo es obligatorio <span><br>")
+            }
+            
+            if (apellido == "") {
+                $("#Apellido").after("<span id='validarApellido' style='color:red'> Este campo es obligatorio <span><br>")
+            }
+
+            var validarNickname = document.getElementById("validarNickname");
+            var validarNombre = document.getElementById("validarNombre");
+            var validarApellido = document.getElementById("validarApellido");
+            
+            if (validarNickname != null) {
+                $("#validarNickname").remove();
+            }
+
+            if (validarNombre != null) {
+                $("#validarNombre").remove();
+            }
+
+            if (validarApellido != null) {
+                $("#validarApellido").remove();
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Nickname" id="Nickname"><br>
+        <input type="text" placeholder="Nombre" id="Nombre"><br>
+        <input type="text" placeholder="Apellido" id="Apellido"><br>
+        <button type="button" onclick="validar();">Enviar Datos</button>
+    </form>
+</body> 
+</html>

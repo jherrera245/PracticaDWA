@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myContent{
+            background-color: cornflowerblue;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+           //$("#datos").html("<p>Diseño web adaptable</p>");
+           $("#datos").append("<p>Texto que se agrega debajo</p>");
+           $("#datos").prepend("<p>Texto que se agrega arriba</p>");
+           $("#datos").before("<p>Texto que se agrega antes del contenido al que apuntamos</p>");
+           $("#datos").after("<p>Texto que se agrega despues de donde lo especificamos</p>");
+
+           $("#datos h2").text("Reemplazando con text");
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+        <div id="datos" class="myContent">
+            <h2>Mis Datos</h2>
+        </div>
+    </div>
+</body>
+</html>
