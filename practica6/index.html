@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Eliminando y reemplazando con JQuery</title>
+</head>
+<body>
+    <div id="banner">
+        <p>Banner de un anuncio de Spotify</p>
+        <p id="cerrar">cerrar</p>
+    </div>
+
+    <div id="carrete">
+        <img id="imagen1" src="img/imagen1.jpg" alt="Imagen del carrete 1">
+        <img id="imagen2" src="img/imagen2.jpg" alt="Imagen del carrete 2">
+        <img id="imagen3" src="img/imagen3.jpg" alt="Imagen del carrete 3">
+        <img id="imagen4" src="img/imagen4.jpg" alt="Imagen del carrete 4">
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //var cerrar = document.getElementById("cerrar");
+            //cerrar.addEventListener("click", cerrarBanner(), false);
+
+            document.getElementById("cerrar").addEventListener("click", cerrarBanner, false);
+
+            //document.getElementById("imagen1").addEventListener("click", carrito(), false);
+
+            var imagenes = document.querySelectorAll("carrete img");
+
+            for (let i = 0; i < imagenes.length; i++) {
+                imagenes[i].addEventListener("click", carrito, false)
+            }
+        });
+
+        function cerrarBanner() {
+            $("#banner").remove();
+        }
+        function carrito(num) {
+            
+            if (num.target == imagen1) {
+                $("#imagen1").replaceWith("<div id='imagen1'>Agregado al carrito con exito</div>");  
+            }
+
+            if (num.target == imagen2) {
+                $("#imagen2").replaceWith("<div id='imagen2'>Agregado al carrito con exito</div>");  
+            }
+
+            if (num.target == imagen3) {
+                $("#imagen3").replaceWith("<div id='imagen3'>Agregado al carrito con exito</div>");  
+            }
+
+            if (num.target == imagen4) {
+                $("#imagen4").replaceWith("<div id='imagen4'>Agregado al carrito con exito</div>");  
+            }
+
+        }
+    </script>
+</body>
+</html>
