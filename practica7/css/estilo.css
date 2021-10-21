@@ -1,0 +1,50 @@
+
+.linkdestacaCursos{
+    background-color:greenyellow;
+    transition: 500ms;
+}
+
+.linkdestacaInfo{
+    /*background-color:greenyellow;*/
+    color : greenyellow;
+    font-weight: bold;
+    margin-left: 25px;
+    transition: 500ms;
+}
+a{
+    display:block;
+    margin-bottom:20px;
+    font-size:24px;
+}
+table{
+    width: 100%;
+    text-align:center;
+    border:none;
+}
+td{
+    border:none;
+}
+#contenedorEnlaces {
+    position: absolute;
+    left: 31px;
+    top: 65px;
+    width: 400px;
+    height: 649px;
+    z-index: 1;
+    padding-top:100px;
+}
+
+button{
+    padding: 10px;
+    background-color: blue;
+    border: 1px solid darkblue;
+    transition: 500ms;
+    color: #fff;
+}
+
+button:hover{
+    padding: 10px;
+    background-color: darkblue;
+    border: 1px solid darkblue;
+    color: #fff;
+}

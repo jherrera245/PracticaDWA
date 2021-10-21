@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Practica 7</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="" id="contenedorEnlaces">
+            <a href="https://www.univo.edu.sv" target="_blank" class="cursos">
+                Univo pagina oficial
+            </a>
+            <a href="https://www.friv.com" target="_blank" class="otros">
+                Juegos FRIV
+            </a>
+            <a href="https://www.google.com" target="_blank" class="otros">
+                Google
+            </a>
+            <a href="https://www.quizizz.com" target="_blank" class="cursos">
+                Quizizz
+            </a>
+            <a href="https://www.youtube.com" target="_blank" class="otros">
+                YouTube
+            </a>
+            <a href="https://campus.univo.edu.sv/" target="_blank">
+                Campus Univo
+            </a>
+        </div>
+
+
+        <table border="1">
+            <tr>
+                <td>
+                    Cursos destacados&nbsp;&nbsp;
+                    <button type="button" id="cursos">Cursos</button>
+                </td>
+                <td>
+                    Cursos varios&nbsp;&nbsp;
+                    <button type="button" id="info">Info</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //$("a[href^='https://']").addClass("linkdestacaCursos");
+            document.getElementById("cursos").addEventListener("click", resaltaCursos, false);
+            document.getElementById("info").addEventListener("click", resaltaInfo, false);
+        });
+        
+        function resaltaCursos(){
+            $(".cursos").toggleClass("linkdestacaCursos"); 
+        }
+
+        function resaltaInfo(){
+            $(".otros").toggleClass("linkdestacaInfo");
+        }
+    </script>
+</body>
+
+</html>
