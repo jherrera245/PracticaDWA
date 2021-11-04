@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Leyendo y cambiandpo atributos CSS con JQuery</title>
+</head>
+
+<body>
+
+    <h1>Bienvenido a TuMundoLyrics.com</h1>
+
+    <div id="letra1">
+        <p>
+            You'll take my life, but I'll take yours too
+            You'll fire your musket, but I'll run you through
+            So when you're waiting for the next attack
+            You'd better stand, there's no turning back
+            The bugle sounds, the charge begins
+            But on this battlefield, no one wins
+            The smell of acrid smoke and horses' breath
+            As I plunge on into certain death
+            The horse, he sweats with fear, we break to run
+            The mighty roar of the Russian guns
+            And as we race towards the human wall
+            The screams of pain as my comrades fall
+            We hurdle bodies that lay on the ground
+            And the Russians fire another round
+            We get so near, yet so far away
+            We won't live to fight another day
+            We get so close, near enough to fight
+            When a Russian gets me in his sights
+            He pulls the trigger and I feel the blow
+            A burst of rounds take my horse below
+            And as I lay there gazing at the sky
+            My body's numb and my throat is dry
+            And as I lay forgotten and alone
+            Without a tear, I draw my parting groan
+        </p>
+
+        <table>
+            <tr>
+                <td>
+                    <button id="aumenta1">Aumentar</button>
+                </td>
+
+                <td>
+                    <button id="disminuye1">Disminuye</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="letra2">
+        <p>
+            You'll take my life, but I'll take yours too
+            You'll fire your musket, but I'll run you through
+            So when you're waiting for the next attack
+            You'd better stand, there's no turning back
+            The bugle sounds, the charge begins
+            But on this battlefield, no one wins
+            The smell of acrid smoke and horses' breath
+            As I plunge on into certain death
+            The horse, he sweats with fear, we break to run
+            The mighty roar of the Russian guns
+            And as we race towards the human wall
+            The screams of pain as my comrades fall
+            We hurdle bodies that lay on the ground
+            And the Russians fire another round
+            We get so near, yet so far away
+            We won't live to fight another day
+            We get so close, near enough to fight
+            When a Russian gets me in his sights
+            He pulls the trigger and I feel the blow
+            A burst of rounds take my horse below
+            And as I lay there gazing at the sky
+            My body's numb and my throat is dry
+            And as I lay forgotten and alone
+            Without a tear, I draw my parting groan
+        </p>
+
+        <table>
+            <tr>
+                <td>
+                    <button id="aumenta2">Aumentar</button>
+                </td>
+
+                <td>
+                    <button id="disminuye2">Disminuye</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="letra3">
+        <p>
+            You'll take my life, but I'll take yours too
+            You'll fire your musket, but I'll run you through
+            So when you're waiting for the next attack
+            You'd better stand, there's no turning back
+            The bugle sounds, the charge begins
+            But on this battlefield, no one wins
+            The smell of acrid smoke and horses' breath
+            As I plunge on into certain death
+            The horse, he sweats with fear, we break to run
+            The mighty roar of the Russian guns
+            And as we race towards the human wall
+            The screams of pain as my comrades fall
+            We hurdle bodies that lay on the ground
+            And the Russians fire another round
+            We get so near, yet so far away
+            We won't live to fight another day
+            We get so close, near enough to fight
+            When a Russian gets me in his sights
+            He pulls the trigger and I feel the blow
+            A burst of rounds take my horse below
+            And as I lay there gazing at the sky
+            My body's numb and my throat is dry
+            And as I lay forgotten and alone
+            Without a tear, I draw my parting groan
+        </p>
+
+        <table>
+            <tr>
+                <td>
+                    <button id="aumenta3">Aumentar</button>
+                </td>
+
+                <td>
+                    <button id="disminuye3">Disminuye</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var botones = document.querySelectorAll("button");
+            for (var i = 0; i<botones.length; i++) {
+                botones[i].addEventListener("click", aumentar, false);
+                botones[i].addEventListener("click", disminuir, false);
+            }
+        });
+
+        function aumentar(event) {
+            let letra = "";
+
+            if (event.target == aumenta1) {
+                letra = "#letra1";
+            } else if (event.target == aumenta2) {
+                letra = "#letra2"
+            } else if (event.target == aumenta3) {
+                letra = "#letra3";
+            }
+
+            var fontSize = $(letra).css("font-size");
+            fontSize = parseInt(fontSize);
+            $(letra).css("font-size", fontSize * 1.1);
+        }
+
+        function disminuir(event) {
+            let letra = "";
+
+            if (event.target == disminuye1) {
+                letra = "#letra1";
+            } else if (event.target == disminuye2) {
+                letra = "#letra2"
+            } else if (event.target == disminuye3) {
+                letra = "#letra3";
+            }
+
+            var fontSize = $(letra).css("font-size");
+            fontSize = parseInt(fontSize);
+
+            $(letra).css("font-size", fontSize * 0.9);
+        }
+    </script>
+</body>
+
+</html>
